@@ -1,0 +1,88 @@
+<svg width="480" height="310" viewBox="0 0 480 310" xmlns="http://www.w3.org/2000/svg">
+  <text x="240" y="25" text-anchor="middle" fill="#abb2bf" font-size="14">滑环 + 碳刷：旋转供电原理（立体示意）</text>
+
+  <rect x="50" y="35" width="380" height="240" rx="10" fill="none" stroke="#555" stroke-width="1.5"/>
+
+  <!-- N/S 磁极标注 -->
+  <text x="240" y="50" text-anchor="middle" fill="#e06c75" font-size="13" font-weight="bold">N 极</text>
+  <line x1="240" y1="53" x2="240" y2="62" stroke="#e06c75" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="68" y="148" text-anchor="middle" fill="#61afef" font-size="11" opacity="0.4">S</text>
+  <text x="412" y="148" text-anchor="middle" fill="#61afef" font-size="11" opacity="0.4">S</text>
+
+  <!-- ======== 转轴（固定——圆柱体自转不改轮廓） ======== -->
+  <rect x="55" y="136" width="370" height="24" rx="4" fill="#999" stroke="#777" stroke-width="1"/>
+
+  <!-- ======== 轴内导线（固定——沿着轴走，不旋转） ======== -->
+  <line x1="158" y1="148" x2="205" y2="148" stroke="#e06c75" stroke-width="2.5" opacity="0.6"/>
+  <line x1="195" y1="148" x2="205" y2="148" stroke="#61afef" stroke-width="2.5" opacity="0.6"/>
+
+  <!-- ======== 左滑环（固定轮廓，只有表面标记旋转） ======== -->
+  <rect x="130" y="120" width="28" height="56" rx="2" fill="#e06c75" opacity="0.2" stroke="#e06c75" stroke-width="2"/>
+  <ellipse cx="130" cy="148" rx="8" ry="28" fill="#e06c75" opacity="0.1" stroke="#e06c75" stroke-width="1.5"/>
+  <rect x="140" y="122" width="4" height="52" rx="2" fill="#e06c75" opacity="0.3"/>
+  <!-- 旋转标记点 -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="0 144 148" to="360 144 148" dur="5s" repeatCount="indefinite"/>
+    <circle cx="144" cy="124" r="3" fill="#e06c75"/>
+  </g>
+  <text x="144" y="190" text-anchor="middle" fill="#e06c75" font-size="10">滑环（随轴自转）</text>
+
+  <!-- ======== 右滑环（固定轮廓，只有表面标记旋转） ======== -->
+  <rect x="180" y="120" width="28" height="56" rx="2" fill="#61afef" opacity="0.2" stroke="#61afef" stroke-width="2"/>
+  <ellipse cx="180" cy="148" rx="8" ry="28" fill="#61afef" opacity="0.1" stroke="#61afef" stroke-width="1.5"/>
+  <rect x="190" y="122" width="4" height="52" rx="2" fill="#61afef" opacity="0.3"/>
+  <!-- 旋转标记点 -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="0 194 148" to="360 194 148" dur="5s" repeatCount="indefinite"/>
+    <circle cx="194" cy="124" r="3" fill="#61afef"/>
+  </g>
+  <text x="194" y="190" text-anchor="middle" fill="#61afef" font-size="10">滑环（随轴自转）</text>
+
+  <!-- ======== 转子铁芯（自转） ======== -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="0 250 148" to="360 250 148" dur="5s" repeatCount="indefinite"/>
+    <rect x="200" y="98" width="100" height="100" rx="4" fill="#e5c07b" opacity="0.5" stroke="#d4a84b" stroke-width="1.5"/>
+    <polygon points="200,98 218,80 318,80 300,98" fill="#e5c07b" opacity="0.3" stroke="#d4a84b" stroke-width="1"/>
+    <polygon points="300,98 318,80 318,180 300,198" fill="#e5c07b" opacity="0.35" stroke="#d4a84b" stroke-width="1"/>
+    <text x="250" y="155" text-anchor="middle" fill="#7a5d1b" font-size="12" font-weight="bold">转子绕组</text>
+  </g>
+
+  <!-- ======== 左碳刷（固定，压贴在滑环弧面下沿） ======== -->
+  <g>
+    <path d="M 122,150 L 116,182 L 146,182 L 139,150 Z" fill="#555" stroke="#444" stroke-width="1.5"/>
+    <text x="116" y="186" fill="#aaa" font-size="7">弹簧</text>
+    <path d="M 116,182 Q 110,192 100,197" fill="none" stroke="#e06c75" stroke-width="1.5"/>
+    <path d="M 122,150 Q 128,147 133,150" fill="none" stroke="#aaa" stroke-width="1" stroke-dasharray="2,2"/>
+  </g>
+  <text x="131" y="200" text-anchor="middle" fill="#666" font-size="9">碳刷（固定）</text>
+
+  <!-- ======== 右碳刷（固定） ======== -->
+  <g>
+    <path d="M 167,150 L 161,182 L 191,182 L 184,150 Z" fill="#555" stroke="#444" stroke-width="1.5"/>
+    <text x="184" y="186" fill="#aaa" font-size="7">弹簧</text>
+    <path d="M 191,182 Q 200,192 210,197" fill="none" stroke="#61afef" stroke-width="1.5"/>
+    <path d="M 167,150 Q 173,147 178,150" fill="none" stroke="#aaa" stroke-width="1" stroke-dasharray="2,2"/>
+  </g>
+  <text x="176" y="200" text-anchor="middle" fill="#666" font-size="9">碳刷（固定）</text>
+
+  <!-- ======== 励磁电源 ======== -->
+  <rect x="85" y="210" width="95" height="20" rx="3" fill="#e06c75" opacity="0.1" stroke="#e06c75" stroke-width="1"/>
+  <text x="132" y="224" text-anchor="middle" fill="#e06c75" font-size="10">励磁电源 +</text>
+  <path d="M 100,197 L 100,210" fill="none" stroke="#e06c75" stroke-width="1.5"/>
+  <path d="M 116,182 L 116,197" fill="none" stroke="#e06c75" stroke-width="1.5"/>
+
+  <rect x="160" y="210" width="95" height="20" rx="3" fill="#61afef" opacity="0.1" stroke="#61afef" stroke-width="1"/>
+  <text x="207" y="224" text-anchor="middle" fill="#61afef" font-size="10">励磁电源 -</text>
+  <path d="M 210,197 L 210,210" fill="none" stroke="#61afef" stroke-width="1.5"/>
+  <path d="M 191,182 L 191,197" fill="none" stroke="#61afef" stroke-width="1.5"/>
+
+  <!-- ω 旋转标注 -->
+  <path d="M 390,133 A 15,15 0 0,1 410,138" fill="none" stroke="#999" stroke-width="1.5"/>
+  <polygon points="412,136 408,140 408,132" fill="#999"/>
+  <text x="420" y="136" fill="#999" font-size="12">ω</text>
+
+  <!-- 底部说明 -->
+  <text x="240" y="262" text-anchor="middle" fill="#666" font-size="10">励磁电源 → 碳刷（固定）→ 滑环（随轴自转）→ 轴内导线 → 转子绕组</text>
+  <text x="240" y="277" text-anchor="middle" fill="#666" font-size="10">碳刷由弹簧压紧在滑环表面，滑动接触持续通电，不会因旋转而断电</text>
+  <text x="240" y="297" text-anchor="middle" fill="#999" font-size="9">注：图中 N/S 磁极实际在转子外围的定子上，此处简化为上下示意</text>
+</svg>
