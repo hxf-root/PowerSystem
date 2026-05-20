@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 400" font-family="Consolas, monospace">
+  <rect width="820" height="400" fill="#fafafa" rx="4"/>
+
+  <!-- Title -->
+  <text x="18" y="24" font-size="13" font-weight="bold" fill="#1a1a1a">电压等级金字塔——经济性与物理约束的平衡</text>
+
+  <!-- Main pyramid -->
+  <!-- Top: UHV (highest voltage, smallest geographic footprint in diagram) -->
+  <polygon points="410,48 120,360 700,360" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- ===== ±800kV DC UHV ===== -->
+  <rect x="360" y="52" width="100" height="36" fill="#7c3aed" rx="3" opacity="0.9"/>
+  <text x="410" y="66" font-size="10" fill="white" font-weight="bold" text-anchor="middle">±800kV DC</text>
+  <text x="410" y="80" font-size="8" fill="#e0d5ff" text-anchor="middle">特高压直流</text>
+
+  <text x="470" y="70" font-size="8" fill="#7c3aed">2000+ km</text>
+  <text x="470" y="82" font-size="7.5" fill="#666">5~10 GW · 西电东送</text>
+
+  <!-- ===== 1000kV AC ===== -->
+  <rect x="345" y="100" width="130" height="36" fill="#8b5cf6" rx="3" opacity="0.85"/>
+  <text x="410" y="114" font-size="10" fill="white" font-weight="bold" text-anchor="middle">1000kV AC</text>
+  <text x="410" y="128" font-size="8" fill="#ddd6fe" text-anchor="middle">特高压交流骨干</text>
+
+  <!-- ===== 500kV ===== -->
+  <rect x="328" y="148" width="164" height="36" fill="#dc2626" rx="3" opacity="0.85"/>
+  <text x="410" y="162" font-size="10" fill="white" font-weight="bold" text-anchor="middle">500kV AC</text>
+  <text x="410" y="176" font-size="8" fill="#fecaca" text-anchor="middle">区域输电主干</text>
+
+  <text x="500" y="166" font-size="8" fill="#dc2626">300~800 km</text>
+  <text x="500" y="178" font-size="7.5" fill="#666">1~3 GW · 省际</text>
+
+  <!-- ===== 220kV ===== -->
+  <rect x="310" y="196" width="200" height="36" fill="#ea580c" rx="3" opacity="0.85"/>
+  <text x="410" y="210" font-size="10" fill="white" font-weight="bold" text-anchor="middle">220kV AC</text>
+  <text x="410" y="224" font-size="8" fill="#fed7aa" text-anchor="middle">省级输电 / 大用户直供</text>
+
+  <text x="518" y="214" font-size="8" fill="#ea580c">100~300 km</text>
+  <text x="518" y="226" font-size="7.5" fill="#666">200~600 MW · 地区间</text>
+
+  <!-- ===== 110kV ===== -->
+  <rect x="292" y="244" width="236" height="36" fill="#2563eb" rx="3" opacity="0.85"/>
+  <text x="410" y="258" font-size="10" fill="white" font-weight="bold" text-anchor="middle">110kV AC</text>
+  <text x="410" y="272" font-size="8" fill="#bfdbfe" text-anchor="middle">城市高压配电网</text>
+
+  <text x="536" y="262" font-size="8" fill="#2563eb">20~80 km</text>
+  <text x="536" y="274" font-size="7.5" fill="#666">50~150 MW · 城市片区</text>
+
+  <!-- ===== 35kV ===== -->
+  <rect x="270" y="292" width="280" height="36" fill="#16a34a" rx="3" opacity="0.85"/>
+  <text x="410" y="306" font-size="10" fill="white" font-weight="bold" text-anchor="middle">35kV AC</text>
+  <text x="410" y="320" font-size="8" fill="#bbf7d0" text-anchor="middle">县区级配电网</text>
+
+  <text x="558" y="310" font-size="8" fill="#16a34a">10~40 km</text>
+  <text x="558" y="322" font-size="7.5" fill="#666">10~30 MW · 县城间</text>
+
+  <!-- ===== 10kV (FTU level - highlight) ===== -->
+  <rect x="252" y="340" width="316" height="48" fill="#f59e0b" rx="4" stroke="#d97706" stroke-width="2" opacity="0.95"/>
+  <text x="410" y="358" font-size="11" fill="#7c2d12" font-weight="bold" text-anchor="middle">10kV AC · 中压配电网</text>
+  <text x="410" y="374" font-size="8" fill="#92400e" text-anchor="middle">2~10 km · 1~5 MW · FTU 工作层面</text>
+  <text x="410" y="384" font-size="7.5" fill="#92400e" text-anchor="middle">城市街道 / 农村架空线 · 环网 · 开环运行</text>
+
+  <!-- Arrow pointing to 10kV: "FTU HERE" -->
+  <g transform="translate(576, 354)">
+    <text x="0" y="10" font-size="9" fill="#d97706" font-weight="bold">← FTU</text>
+    <text x="0" y="22" font-size="8" fill="#666">你在这里</text>
+  </g>
+
+  <!-- ===== 380V at very bottom ===== -->
+  <rect x="230" y="392" width="360" height="4" fill="#6b7280" rx="1" opacity="0.7"/>
+  <text x="410" y="406" font-size="8" fill="#6b7280" text-anchor="middle">380/220V AC · 低压配电网 · 100~500m · 50~200kW · 入户</text>
+
+  <!-- ===== LEFT SIDE: Distribution characteristics ===== -->
+  <rect x="16" y="56" width="222" height="130" fill="white" stroke="#e5e7eb" stroke-width="1" rx="4"/>
+
+  <text x="28" y="76" font-size="10" fill="#1a1a1a" font-weight="bold">电压每升一级</text>
+
+  <g font-size="9" fill="#666">
+    <text x="28" y="94">电压 ↑ k 倍</text>
+    <text x="28" y="110">电流 ↓ k 倍（P 不变）</text>
+    <text x="28" y="126">线路损耗 ↓ k² 倍</text>
+    <text x="28" y="142">输送距离 ↑ k 倍</text>
+    <text x="28" y="158">绝缘成本 ↑ 指数</text>
+    <text x="28" y="174">铁塔/走廊 ↑ 大幅</text>
+  </g>
+
+  <!-- ===== LEFT BOTTOM: Voltage selection formula ===== -->
+  <rect x="16" y="200" width="222" height="100" fill="white" stroke="#e5e7eb" stroke-width="1" rx="4"/>
+
+  <text x="28" y="220" font-size="10" fill="#1a1a1a" font-weight="bold">经验选型公式</text>
+
+  <text x="28" y="240" font-size="9" fill="#666">Still's formula:</text>
+  <text x="28" y="258" font-size="9" fill="#2563eb">U_econ ≈ 5.5√(0.6L+P/100)</text>
+  <text x="28" y="278" font-size="8" fill="#999">U (kV), L (km), P (kW)</text>
+
+  <!-- ===== RIGHT SIDE: Grounding method linkage ===== -->
+  <rect x="590" y="56" width="216" height="130" fill="white" stroke="#e5e7eb" stroke-width="1" rx="4"/>
+
+  <text x="602" y="76" font-size="10" fill="#1a1a1a" font-weight="bold">电压等级 ∝ 接地方式</text>
+
+  <g font-size="9" fill="#666">
+    <text x="602" y="96">500/220kV 输电网</text>
+    <text x="612" y="110" fill="#dc2626">→ 直接接地（大电流）</text>
+
+    <text x="602" y="130">110kV 高压配网</text>
+    <text x="612" y="144" fill="#ea580c">→ 直接接地 or 小电阻</text>
+
+    <text x="602" y="164">10kV 配网（电缆多）</text>
+    <text x="612" y="178" fill="#2563eb">→ 小电阻接地</text>
+  </g>
+
+  <!-- ===== RIGHT BOTTOM: Key insight ===== -->
+  <rect x="590" y="200" width="216" height="80" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="4"/>
+
+  <text x="602" y="220" font-size="10" fill="#b45309" font-weight="bold">关键认知</text>
+
+  <g font-size="8.5" fill="#92400e">
+    <text x="602" y="240">配电网不是输电网的缩小版</text>
+    <text x="602" y="258">需分析的对象完全不同：</text>
+    <text x="602" y="276">输电关注稳定极限</text>
+    <text x="602" y="292">配电关注故障恢复</text>
+  </g>
+</svg>
