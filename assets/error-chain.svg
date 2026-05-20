@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 740" font-family="Consolas, monospace">
+  <rect width="580" height="740" fill="#fafafa" rx="4"/>
+
+  <text x="18" y="24" font-size="13" font-weight="bold" fill="#1a1a1a">测量误差链——从一次侧到 FTU 内部数值</text>
+
+  <!-- ====== Level 0: Primary ====== -->
+  <rect x="80" y="45" width="420" height="36" rx="6" fill="#1e40af" opacity="0.9"/>
+  <text x="290" y="68" font-size="13" fill="white" font-weight="bold" text-anchor="middle">一次电气量（真实的电压 / 电流）</text>
+
+  <!-- Arrow down -->
+  <line x1="290" y1="81" x2="290" y2="100" stroke="#555" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- ====== Level 1: CT/PT ====== -->
+  <rect x="80" y="104" width="420" height="50" rx="6" fill="white" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="290" y="122" font-size="12" fill="#dc2626" font-weight="bold" text-anchor="middle">第 1 层：CT/PT 变换（误差 0.2% ~ 5%）</text>
+  <text x="290" y="140" font-size="10" fill="#666" text-anchor="middle">精度等级限制 · CT 饱和/剩磁 · PT 铁磁谐振</text>
+
+  <line x1="290" y1="154" x2="290" y2="173" stroke="#555" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- ====== Level 2: Cable ====== -->
+  <rect x="80" y="177" width="420" height="50" rx="6" fill="white" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="290" y="195" font-size="12" fill="#ea580c" font-weight="bold" text-anchor="middle">第 2 层：二次电缆（误差 0.1% ~ 0.5%）</text>
+  <text x="290" y="213" font-size="10" fill="#666" text-anchor="middle">CT 回路负担 → 压降 · PT 回路电阻分压 · 长度 ↑ / 截面 ↓ → 误差 ↑</text>
+
+  <line x1="290" y1="227" x2="290" y2="246" stroke="#555" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- ====== Level 3: Internal transformer ====== -->
+  <rect x="80" y="250" width="420" height="50" rx="6" fill="white" stroke="#eab308" stroke-width="1.5"/>
+  <text x="290" y="268" font-size="12" fill="#ca8a04" font-weight="bold" text-anchor="middle">第 3 层：FTU 内部变换（误差 0.1% ~ 1%）</text>
+  <text x="290" y="286" font-size="10" fill="#666" text-anchor="middle">内部小 CT/PT 隔离 + 二次缩小 · 采样电阻温漂</text>
+
+  <line x1="290" y1="300" x2="290" y2="319" stroke="#555" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- ====== Level 4: ADC ====== -->
+  <rect x="80" y="323" width="420" height="50" rx="6" fill="white" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="290" y="341" font-size="12" fill="#16a34a" font-weight="bold" text-anchor="middle">第 4 层：ADC 采样（量化误差 ±1 LSB）</text>
+  <text x="290" y="359" font-size="10" fill="#666" text-anchor="middle">12bit: ±0.024% · 16bit: ±0.0015% · 采样率 + 孔径抖动</text>
+
+  <line x1="290" y1="373" x2="290" y2="392" stroke="#555" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- ====== Level 5: Software ====== -->
+  <rect x="80" y="396" width="420" height="50" rx="6" fill="white" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="290" y="414" font-size="12" fill="#8b5cf6" font-weight="bold" text-anchor="middle">第 5 层：软件算法（算法误差）</text>
+  <text x="290" y="432" font-size="10" fill="#666" text-anchor="middle">RMS 窗长选择 · FFT 频谱泄漏/栅栏效应 · 滤波器延时与相移</text>
+
+  <line x1="290" y1="446" x2="290" y2="465" stroke="#555" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- ====== Level 6: Telemetry ====== -->
+  <rect x="80" y="469" width="420" height="50" rx="6" fill="white" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="290" y="487" font-size="12" fill="#06b6d4" font-weight="bold" text-anchor="middle">第 6 层：遥测上送（通信延迟）</text>
+  <text x="290" y="505" font-size="10" fill="#666" text-anchor="middle">协议封装延迟 · 通道传输 · 死区过滤（变化上送）</text>
+
+  <line x1="290" y1="519" x2="290" y2="538" stroke="#555" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- ====== End: FTU value ====== -->
+  <rect x="80" y="542" width="420" height="36" rx="6" fill="#1e40af" opacity="0.9"/>
+  <text x="290" y="565" font-size="13" fill="white" font-weight="bold" text-anchor="middle">FTU 内部数值（你代码里读到的那个数字）</text>
+
+  <!-- ====== Side annotations ====== -->
+  <!-- Cumulative error note -->
+  <rect x="20" y="595" width="540" height="50" rx="4" fill="#fef2f2" stroke="#fca5a5"/>
+  <text x="290" y="614" font-size="11" fill="#dc2626" font-weight="bold" text-anchor="middle">⚠ 累积误差效应</text>
+  <text x="290" y="632" font-size="10" fill="#666" text-anchor="middle">保护定值整定必须预留误差链裕量。若定值 100A，累计误差 ±5% → 真实动作值 95A~105A。</text>
+
+  <!-- Design principles -->
+  <text x="18" y="668" font-size="11" font-weight="bold" fill="#1a1a1a">各层误差控制要点：</text>
+  <text x="18" y="686" font-size="10" fill="#666">• CT/PT：计量 0.2/0.5 级，保护 5P 级，注意负担匹配</text>
+  <text x="18" y="700" font-size="10" fill="#666">• 电缆：CT 回路 ≥ 2.5mm² 铜线，长度尽量短，差动保护两臂等长</text>
+  <text x="18" y="714" font-size="10" fill="#666">• ADC：14~16bit，工频每周波 ≥ 24~64 点，抗混叠滤波</text>
+  <text x="18" y="728" font-size="10" fill="#666">• 软件：谐波高时 RMS 优于峰值法，直流衰减分量影响基波提取</text>
+
+  <defs>
+    <marker id="arrowDown" markerWidth="8" markerHeight="6" refX="4" refY="6" orient="auto">
+      <path d="M0,0 L4,6 L8,0 Z" fill="#555"/>
+    </marker>
+  </defs>
+</svg>
