@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" font-family="Consolas, monospace">
+  <rect width="900" height="320" fill="#fafafa" rx="4"/>
+
+  <text x="18" y="24" font-size="13" font-weight="bold" fill="#1a1a1a">潮流计算示意——电压、功率和线损</text>
+
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#ea580c"/>
+    </marker>
+  </defs>
+
+  <!-- Source bus -->
+  <rect x="36" y="82" width="140" height="92" fill="white" stroke="#2563eb" stroke-width="1.6" rx="4"/>
+  <text x="106" y="102" font-size="11" fill="#2563eb" font-weight="bold" text-anchor="middle">电源母线</text>
+  <circle cx="106" cy="134" r="24" fill="none" stroke="#2563eb" stroke-width="1.4"/>
+  <circle cx="106" cy="134" r="10" fill="none" stroke="#2563eb" stroke-width="1"/>
+  <text x="106" y="138" font-size="10" fill="#2563eb" text-anchor="middle">U</text>
+  <text x="106" y="166" font-size="8.5" fill="#666" text-anchor="middle">10kV / θ₁</text>
+
+  <!-- Feeder line -->
+  <line x1="176" y1="134" x2="236" y2="134" stroke="#6b7280" stroke-width="2.2" marker-end="url(#arrowBlue)"/>
+  <line x1="236" y1="134" x2="708" y2="134" stroke="#6b7280" stroke-width="2.2"/>
+
+  <!-- Line impedance box -->
+  <rect x="292" y="72" width="130" height="72" fill="white" stroke="#ea580c" stroke-width="1.4" rx="4"/>
+  <text x="357" y="92" font-size="11" fill="#ea580c" font-weight="bold" text-anchor="middle">线路阻抗</text>
+  <text x="357" y="112" font-size="9" fill="#666" text-anchor="middle">R = 2.0Ω</text>
+  <text x="357" y="126" font-size="9" fill="#666" text-anchor="middle">X = 2.8Ω</text>
+  <text x="357" y="140" font-size="8.5" fill="#ea580c" text-anchor="middle">压降、线损都从这里来</text>
+
+  <!-- Load side -->
+  <rect x="708" y="82" width="156" height="92" fill="white" stroke="#16a34a" stroke-width="1.6" rx="4"/>
+  <text x="786" y="102" font-size="11" fill="#16a34a" font-weight="bold" text-anchor="middle">末端负荷</text>
+  <circle cx="758" cy="134" r="13" fill="none" stroke="#16a34a" stroke-width="1.2"/>
+  <line x1="771" y1="134" x2="810" y2="134" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arrowGreen)"/>
+  <text x="790" y="127" font-size="9" fill="#16a34a" text-anchor="middle">P</text>
+  <line x1="758" y1="147" x2="758" y2="172" stroke="#ea580c" stroke-width="1.6" marker-end="url(#arrowOrange)"/>
+  <text x="747" y="162" font-size="9" fill="#ea580c" text-anchor="end">Q</text>
+  <text x="786" y="166" font-size="8.5" fill="#666" text-anchor="middle">P = 2MW, Q = 1.2Mvar</text>
+
+  <!-- Flow annotations -->
+  <path d="M 210 104 C 310 88, 520 88, 650 104" fill="none" stroke="#2563eb" stroke-width="1.1" stroke-dasharray="6,4"/>
+  <text x="430" y="85" font-size="9" fill="#2563eb" text-anchor="middle">电流 I 沿馈线流动</text>
+
+  <path d="M 210 160 C 310 176, 520 176, 650 160" fill="none" stroke="#dc2626" stroke-width="1.1" stroke-dasharray="6,4"/>
+  <text x="430" y="192" font-size="9" fill="#dc2626" text-anchor="middle">线路损耗 P_loss = I²R</text>
+
+  <!-- Voltage drop -->
+  <g transform="translate(520, 214)">
+    <rect x="0" y="0" width="330" height="72" fill="white" stroke="#e5e7eb" rx="4"/>
+    <text x="165" y="18" font-size="10.5" fill="#1a1a1a" font-weight="bold" text-anchor="middle">潮流的可见结果</text>
+    <text x="18" y="38" font-size="9" fill="#666">源端电压：U₁ = 10.0kV</text>
+    <text x="18" y="54" font-size="9" fill="#666">末端电压：U₂ ≈ 9.27kV</text>
+    <text x="168" y="38" font-size="9" fill="#666">电压降：ΔU ≈ 0.73kV</text>
+    <text x="168" y="54" font-size="9" fill="#666">线损：P_loss ≈ 109kW</text>
+    <text x="270" y="42" font-size="8.5" fill="#16a34a" text-anchor="middle">有功决定</text>
+    <text x="270" y="56" font-size="8.5" fill="#ea580c" text-anchor="middle">无功放大压降</text>
+  </g>
+
+  <!-- Small callouts -->
+  <rect x="46" y="206" width="200" height="44" fill="#eff6ff" rx="4"/>
+  <text x="146" y="223" font-size="9" fill="#2563eb" text-anchor="middle">潮流计算回答：电压在哪儿</text>
+  <text x="146" y="239" font-size="9" fill="#2563eb" text-anchor="middle">功率往哪儿走、损耗有多大</text>
+
+  <rect x="46" y="258" width="200" height="44" fill="#fff7ed" rx="4"/>
+  <text x="146" y="275" font-size="9" fill="#ea580c" text-anchor="middle">线路越长、负荷越重</text>
+  <text x="146" y="291" font-size="9" fill="#ea580c" text-anchor="middle">电压越难维持</text>
+</svg>

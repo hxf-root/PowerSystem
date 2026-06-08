@@ -17,9 +17,9 @@
 | 2 | **测量系统** — CT / PT / 采样算法 | ✅ 已完成 |
 | 3 | **三相交流系统** — 对称分量 / 中性点接地 | ✅ 已完成 |
 | 4 | **电网结构** — 发输变配用 / 配网拓扑 | ✅ 已完成 |
-| 5 | **系统分析** — 潮流 / 短路 / 稳定性 | ⏳ 待开始 |
-| 6 | **继电保护** — 过流 / 零序 / 方向 / 差动 | ⏳ 待开始 |
-| 7 | **配电自动化** — FA / FTU / 104 规约 | ⏳ 待开始 |
+| 5 | **系统分析** — 潮流 / 短路 / 稳定性 | ✅ 已完成 |
+| 6 | **继电保护** — 过流 / 零序 / 方向 / 差动 | ✅ 已完成 |
+| 7 | **配电自动化** — FA / FTU / 104 规约 | 🚧 进行中 |
 
 详细路线图参见 [路线.md](路线.md)。
 
@@ -27,7 +27,7 @@
 
 ## 当前进度
 
-第一阶段（第 0~3 层）和第二阶段的第 4 层已完成，进入第 5 层——系统分析（潮流、短路、稳定性）。
+第一阶段（第 0~3 层）和第二阶段的第 4~6 层已完成，已经开始第 7 层——配电自动化（FA、FTU、104 规约）。
 
 | 文件 | 内容 |
 |------|------|
@@ -36,8 +36,11 @@
 | [第2层-测量系统.md](第2层-测量系统.md) | CT、PT、接线方式、误差链、电量计算 |
 | [第3层-三相交流系统.md](第3层-三相交流系统.md) | 对称分量（物理意义）、中性点接地、相序 |
 | [第4层-电网结构.md](第4层-电网结构.md) | 发输变配用、电压等级分层、配网拓扑、接地方式选型 |
+| [第5层-系统分析.md](第5层-系统分析.md) | 潮流、短路、稳定性、系统分析与 FTU 连接 |
+| [第6层-继电保护.md](第6层-继电保护.md) | 保护四性、过流、零序、方向、差动、配电保护特点 |
+| [第7层-配电自动化.md](第7层-配电自动化.md) | FA、FTU、三遥、IEC104 / 61850、拓扑恢复 |
 
-### 动画资源（SVG，共 16 张）
+### 动画资源（SVG，共 25 张）
 
 ---
 
@@ -71,6 +74,8 @@ PowerSystem/
 ├── 第2层-测量系统.md
 ├── 第3层-三相交流系统.md
 ├── 第4层-电网结构.md
+├── 第5层-系统分析.md
+├── 第6层-继电保护.md
 └── assets/
     ├── phasor-rotation.svg
     ├── generator-coil.svg
@@ -87,7 +92,16 @@ PowerSystem/
     ├── neutral-grounding-comparison.svg
     ├── power-grid-structure.svg
     ├── distribution-topology.svg
-    └── voltage-hierarchy.svg
+    ├── voltage-hierarchy.svg
+    ├── power-flow-study.svg
+    ├── system-analysis-overview.svg
+    ├── short-circuit-study.svg
+    ├── stability-swing.svg
+    ├── protection-overview.svg
+    ├── protection-coordination.svg
+    ├── fa-restoration-flow.svg
+    ├── ftu-functional-architecture.svg
+    └── communication-protocols.svg
 ```
 
 ---

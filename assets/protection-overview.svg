@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" font-family="Consolas, monospace">
+  <rect width="900" height="320" fill="#fafafa" rx="4"/>
+
+  <text x="18" y="24" font-size="13" font-weight="bold" fill="#1a1a1a">继电保护总览——不同保护看的是不同异常</text>
+
+  <defs>
+    <marker id="arrowGray" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#6b7280"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+
+  <!-- Source -->
+  <rect x="34" y="92" width="110" height="90" fill="white" stroke="#2563eb" stroke-width="1.4" rx="5"/>
+  <text x="89" y="114" font-size="11" fill="#2563eb" font-weight="bold" text-anchor="middle">电源</text>
+  <circle cx="89" cy="146" r="20" fill="none" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="89" y="150" font-size="10" fill="#2563eb" text-anchor="middle">U/I</text>
+  <text x="89" y="174" font-size="8.5" fill="#666" text-anchor="middle">上游网络</text>
+
+  <!-- Main bus -->
+  <line x1="144" y1="138" x2="236" y2="138" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowGray)"/>
+  <rect x="236" y="108" width="138" height="60" fill="white" stroke="#1f2937" stroke-width="1.4" rx="5"/>
+  <text x="305" y="129" font-size="11" fill="#1f2937" font-weight="bold" text-anchor="middle">保护对象</text>
+  <text x="305" y="145" font-size="9" fill="#666" text-anchor="middle">线路 / 变压器 / 母线</text>
+
+  <!-- Fault arrows -->
+  <line x1="374" y1="138" x2="470" y2="138" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowGray)"/>
+  <rect x="470" y="92" width="110" height="90" fill="white" stroke="#16a34a" stroke-width="1.4" rx="5"/>
+  <text x="525" y="114" font-size="11" fill="#16a34a" font-weight="bold" text-anchor="middle">下游负荷</text>
+  <circle cx="525" cy="146" r="18" fill="none" stroke="#16a34a" stroke-width="1.2"/>
+  <text x="525" y="150" font-size="10" fill="#16a34a" text-anchor="middle">L</text>
+  <text x="525" y="174" font-size="8.5" fill="#666" text-anchor="middle">健康区域</text>
+
+  <!-- Protection blocks -->
+  <rect x="628" y="54" width="236" height="212" fill="white" stroke="#e5e7eb" stroke-width="1.2" rx="6"/>
+  <text x="746" y="78" font-size="12" fill="#1a1a1a" font-weight="bold" text-anchor="middle">四类核心保护</text>
+
+  <rect x="650" y="92" width="192" height="28" fill="#fff7ed" rx="4"/>
+  <text x="746" y="111" font-size="10" fill="#ea580c" text-anchor="middle">过流：看电流是否超限</text>
+
+  <rect x="650" y="128" width="192" height="28" fill="#fef2f2" rx="4"/>
+  <text x="746" y="147" font-size="10" fill="#dc2626" text-anchor="middle">零序：看电是否跑进地里</text>
+
+  <rect x="650" y="164" width="192" height="28" fill="#eff6ff" rx="4"/>
+  <text x="746" y="183" font-size="10" fill="#2563eb" text-anchor="middle">方向：看故障往哪边跑</text>
+
+  <rect x="650" y="200" width="192" height="28" fill="#f5f3ff" rx="4"/>
+  <text x="746" y="219" font-size="10" fill="#7c3aed" text-anchor="middle">差动：看进出电流对不对</text>
+
+  <text x="746" y="248" font-size="8.5" fill="#666" text-anchor="middle">保护的任务：判断 + 选择性切除</text>
+
+  <!-- Bottom notes -->
+  <rect x="34" y="218" width="564" height="48" fill="white" stroke="#e5e7eb" rx="5"/>
+  <text x="316" y="238" font-size="9" fill="#666" text-anchor="middle">保护不只在“发现异常”，更在“谁先动、谁后动、切哪一段”</text>
+  <text x="316" y="254" font-size="9" fill="#666" text-anchor="middle">因此需要主保护、后备保护、配合时间和明确的保护区边界</text>
+</svg>

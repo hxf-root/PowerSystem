@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" font-family="Consolas, monospace">
+  <rect width="900" height="320" fill="#fafafa" rx="4"/>
+
+  <text x="18" y="24" font-size="13" font-weight="bold" fill="#1a1a1a">FTU 功能结构——测量、判断、通信、控制</text>
+
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#ea580c"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+
+  <!-- Center FTU -->
+  <rect x="338" y="84" width="224" height="132" fill="white" stroke="#1f2937" stroke-width="1.6" rx="10"/>
+  <text x="450" y="112" font-size="12" fill="#1f2937" font-weight="bold" text-anchor="middle">FTU</text>
+  <text x="450" y="136" font-size="9" fill="#666" text-anchor="middle">边缘智能节点</text>
+  <text x="450" y="156" font-size="9" fill="#666" text-anchor="middle">测量 + 判断 + 通信 + 控制</text>
+  <rect x="376" y="172" width="148" height="22" fill="#f3f4f6" rx="4"/>
+  <text x="450" y="187" font-size="9" fill="#1f2937" text-anchor="middle">保护逻辑 / FA 策略 / 遥控执行</text>
+
+  <!-- Surrounding modules -->
+  <rect x="40" y="84" width="176" height="92" fill="white" stroke="#2563eb" stroke-width="1.4" rx="8"/>
+  <text x="128" y="110" font-size="11" fill="#2563eb" font-weight="bold" text-anchor="middle">测量</text>
+  <text x="128" y="132" font-size="9" fill="#666" text-anchor="middle">CT / PT / 采样</text>
+  <text x="128" y="150" font-size="9" fill="#666" text-anchor="middle">U、I、P、Q、3I0</text>
+
+  <rect x="40" y="194" width="176" height="92" fill="white" stroke="#ea580c" stroke-width="1.4" rx="8"/>
+  <text x="128" y="220" font-size="11" fill="#ea580c" font-weight="bold" text-anchor="middle">通信</text>
+  <text x="128" y="242" font-size="9" fill="#666" text-anchor="middle">IEC104 / 61850</text>
+  <text x="128" y="260" font-size="9" fill="#666" text-anchor="middle">遥测、遥信、遥控</text>
+
+  <rect x="684" y="84" width="176" height="92" fill="white" stroke="#7c3aed" stroke-width="1.4" rx="8"/>
+  <text x="772" y="110" font-size="11" fill="#7c3aed" font-weight="bold" text-anchor="middle">判断</text>
+  <text x="772" y="132" font-size="9" fill="#666" text-anchor="middle">过流 / 零序 / 方向</text>
+  <text x="772" y="150" font-size="9" fill="#666" text-anchor="middle">故障定位 / 状态判断</text>
+
+  <rect x="684" y="194" width="176" height="92" fill="white" stroke="#16a34a" stroke-width="1.4" rx="8"/>
+  <text x="772" y="220" font-size="11" fill="#16a34a" font-weight="bold" text-anchor="middle">控制</text>
+  <text x="772" y="242" font-size="9" fill="#666" text-anchor="middle">跳闸 / 合闸 / 联络</text>
+  <text x="772" y="260" font-size="9" fill="#666" text-anchor="middle">输出动作命令</text>
+
+  <!-- arrows -->
+  <line x1="216" y1="130" x2="338" y2="130" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrowBlue)"/>
+  <line x1="216" y1="240" x2="338" y2="166" stroke="#ea580c" stroke-width="1.6" marker-end="url(#arrowOrange)"/>
+  <line x1="562" y1="130" x2="684" y2="130" stroke="#7c3aed" stroke-width="1.6" marker-end="url(#arrowPurple)"/>
+  <line x1="562" y1="166" x2="684" y2="240" stroke="#16a34a" stroke-width="1.6" marker-end="url(#arrowGreen)"/>
+
+  <rect x="300" y="250" width="300" height="36" fill="white" stroke="#e5e7eb" rx="6"/>
+  <text x="450" y="272" font-size="9" fill="#666" text-anchor="middle">FTU 把一次系统状态转成可判断、可上传、可执行的边缘节点</text>
+</svg>

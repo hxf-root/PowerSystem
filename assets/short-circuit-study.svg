@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" font-family="Consolas, monospace">
+  <rect width="900" height="330" fill="#fafafa" rx="4"/>
+
+  <text x="18" y="24" font-size="13" font-weight="bold" fill="#1a1a1a">短路分析示意——故障点决定电流大小和保护动作</text>
+
+  <defs>
+    <marker id="arrowRed" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#6b7280"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#ea580c"/>
+    </marker>
+  </defs>
+
+  <!-- Source -->
+  <rect x="34" y="78" width="150" height="110" fill="white" stroke="#2563eb" stroke-width="1.5" rx="5"/>
+  <text x="109" y="100" font-size="11" fill="#2563eb" font-weight="bold" text-anchor="middle">电源系统</text>
+  <circle cx="109" cy="138" r="22" fill="none" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="109" y="143" font-size="11" fill="#2563eb" text-anchor="middle">Z_th</text>
+  <text x="109" y="171" font-size="8.5" fill="#666" text-anchor="middle">等效阻抗</text>
+
+  <!-- Line -->
+  <line x1="184" y1="133" x2="258" y2="133" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowGray)"/>
+  <line x1="258" y1="133" x2="650" y2="133" stroke="#6b7280" stroke-width="2"/>
+
+  <!-- Fault point -->
+  <rect x="372" y="80" width="140" height="106" fill="white" stroke="#dc2626" stroke-width="1.5" rx="5"/>
+  <text x="442" y="100" font-size="11" fill="#dc2626" font-weight="bold" text-anchor="middle">故障点</text>
+  <circle cx="442" cy="134" r="18" fill="none" stroke="#dc2626" stroke-width="1.3"/>
+  <line x1="430" y1="122" x2="454" y2="146" stroke="#dc2626" stroke-width="1.4"/>
+  <line x1="454" y1="122" x2="430" y2="146" stroke="#dc2626" stroke-width="1.4"/>
+  <text x="442" y="170" font-size="8.5" fill="#666" text-anchor="middle">金属性短路 / 高阻短路</text>
+
+  <!-- Fault current loop -->
+  <path d="M 442 134 C 500 134, 548 118, 592 92" fill="none" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arrowRed)"/>
+  <path d="M 442 134 C 500 134, 548 150, 592 176" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrowOrange)"/>
+  <text x="534" y="111" font-size="9" fill="#dc2626" text-anchor="middle">故障电流 I_fault</text>
+  <text x="534" y="165" font-size="9" fill="#ea580c" text-anchor="middle">I_fault 越大，切除越快</text>
+
+  <!-- Downstream line and load -->
+  <rect x="650" y="78" width="216" height="110" fill="white" stroke="#16a34a" stroke-width="1.5" rx="5"/>
+  <text x="758" y="100" font-size="11" fill="#16a34a" font-weight="bold" text-anchor="middle">下游负荷</text>
+  <circle cx="710" cy="136" r="14" fill="none" stroke="#16a34a" stroke-width="1.2"/>
+  <text x="710" y="140" font-size="10" fill="#16a34a" text-anchor="middle">L</text>
+  <circle cx="780" cy="136" r="14" fill="none" stroke="#16a34a" stroke-width="1.2"/>
+  <text x="780" y="140" font-size="10" fill="#16a34a" text-anchor="middle">L</text>
+  <text x="758" y="170" font-size="8.5" fill="#666" text-anchor="middle">故障切除前，负荷可能失电</text>
+
+  <!-- Protection block -->
+  <rect x="74" y="222" width="240" height="72" fill="white" stroke="#7c3aed" stroke-width="1.5" rx="5"/>
+  <text x="194" y="244" font-size="11" fill="#7c3aed" font-weight="bold" text-anchor="middle">保护判据</text>
+  <text x="194" y="262" font-size="9" fill="#666" text-anchor="middle">过流 / 零序 / 方向 / 差动</text>
+  <text x="194" y="278" font-size="9" fill="#666" text-anchor="middle">定值、灵敏性、选择性</text>
+
+  <!-- Sequence network hint -->
+  <rect x="356" y="222" width="490" height="72" fill="white" stroke="#e5e7eb" stroke-width="1.2" rx="5"/>
+  <text x="601" y="242" font-size="11" fill="#1a1a1a" font-weight="bold" text-anchor="middle">短路分析的核心</text>
+  <text x="430" y="262" font-size="9" fill="#666">正序：系统正常通道</text>
+  <text x="430" y="278" font-size="9" fill="#666">负序：不平衡通道</text>
+  <text x="672" y="262" font-size="9" fill="#666">零序：接地回路</text>
+  <text x="672" y="278" font-size="9" fill="#666">三套网络在故障点耦合</text>
+</svg>

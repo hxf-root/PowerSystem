@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" font-family="Consolas, monospace">
+  <rect width="900" height="340" fill="#fafafa" rx="4"/>
+
+  <text x="18" y="24" font-size="13" font-weight="bold" fill="#1a1a1a">稳定性示意——扰动后系统能不能重新稳住</text>
+
+  <defs>
+    <marker id="arrowPurple" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#ea580c"/>
+    </marker>
+  </defs>
+
+  <!-- Swing curve panel -->
+  <rect x="28" y="54" width="520" height="220" fill="white" stroke="#7c3aed" stroke-width="1.4" rx="6"/>
+  <text x="288" y="78" font-size="12" fill="#7c3aed" font-weight="bold" text-anchor="middle">功角摆动曲线</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="234" x2="500" y2="234" stroke="#6b7280" stroke-width="1.2"/>
+  <line x1="80" y1="234" x2="80" y2="108" stroke="#6b7280" stroke-width="1.2"/>
+  <text x="504" y="238" font-size="8.5" fill="#666">t</text>
+  <text x="66" y="112" font-size="8.5" fill="#666">δ</text>
+
+  <!-- Stable swing curve -->
+  <path d="M 92 182 C 130 160, 160 128, 202 136 S 284 184, 320 168 S 398 112, 434 126 S 470 160, 496 154"
+        fill="none" stroke="#7c3aed" stroke-width="2.2"/>
+  <path d="M 92 182 C 130 162, 160 132, 202 140 S 284 188, 320 172"
+        fill="none" stroke="#a78bfa" stroke-width="1.4" stroke-dasharray="5,4"/>
+  <text x="164" y="124" font-size="9" fill="#7c3aed">扰动后仍回到稳定区</text>
+
+  <!-- Swing equation hint -->
+  <rect x="94" y="148" width="168" height="42" fill="#f5f3ff" rx="4"/>
+  <text x="178" y="164" font-size="9" fill="#7c3aed" text-anchor="middle">有功不平衡 → 转子加减速</text>
+  <text x="178" y="180" font-size="9" fill="#7c3aed" text-anchor="middle">功角摆动 → 可能失步</text>
+
+  <!-- Instability region -->
+  <line x1="400" y1="106" x2="400" y2="234" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="428" y="118" font-size="9" fill="#dc2626">失稳边界</text>
+  <path d="M 430 136 C 450 124, 470 110, 494 92" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <text x="474" y="88" font-size="9" fill="#dc2626" text-anchor="middle">越界 → 失步</text>
+
+  <!-- Right panel: three stability types -->
+  <rect x="572" y="54" width="300" height="220" fill="white" stroke="#e5e7eb" stroke-width="1.2" rx="6"/>
+  <text x="722" y="78" font-size="12" fill="#1a1a1a" font-weight="bold" text-anchor="middle">三种稳定性</text>
+
+  <rect x="594" y="98" width="256" height="36" fill="#eff6ff" rx="4"/>
+  <text x="722" y="120" font-size="10" fill="#2563eb" text-anchor="middle">频率稳定：看有功平衡</text>
+
+  <rect x="594" y="144" width="256" height="36" fill="#fff7ed" rx="4"/>
+  <text x="722" y="166" font-size="10" fill="#ea580c" text-anchor="middle">电压稳定：看无功支撑</text>
+
+  <rect x="594" y="190" width="256" height="36" fill="#f5f3ff" rx="4"/>
+  <text x="722" y="212" font-size="10" fill="#7c3aed" text-anchor="middle">功角稳定：看同步是否丢失</text>
+
+  <text x="722" y="252" font-size="8.5" fill="#666" text-anchor="middle">扰动越大、清除越慢，越容易失稳</text>
+
+  <!-- Bottom summary -->
+  <rect x="28" y="286" width="844" height="34" fill="white" stroke="#e5e7eb" rx="5"/>
+  <text x="448" y="307" font-size="9" fill="#666" text-anchor="middle">稳定性分析回答的是：切除故障之后，系统还能不能继续保持同步、保持电压、保持频率。</text>
+</svg>
